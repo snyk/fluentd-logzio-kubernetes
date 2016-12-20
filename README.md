@@ -26,6 +26,6 @@ The logz.io endpoint URL is `${_YOUR_ENDPOINT_URL_}?token=${_YOUR_TOKEN_}&type=$
 
 This repo is based on https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elasticsearch/fluentd-es-image
 
-It was first created by the folks of [DoIT](https://www.doit-intl.com/)
+It was first created by the folks of [DoiT International](https://www.doit-intl.com/)
 
 Used and published by [Snyk](https://snyk.io) for the benefit of [Logz.io](https://logz.io) users
