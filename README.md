@@ -3,7 +3,7 @@ This directory contains the source files needed to make a Docker image
 that collects Docker container log files using [Fluentd](http://www.fluentd.org/)
 and sends them to your [Logz.io](https://logz.io) account.
 
-This image is designed to be used as a [daemonset](http://kubernetes.io/docs/admin/daemons) in a the [Kubernetes](https://github.com/kubernetes/kubernetes) cluster.
+This image is designed to be used as a [daemonset](http://kubernetes.io/docs/admin/daemons) in a [Kubernetes](https://github.com/kubernetes/kubernetes) cluster.
 
 ## Usage
 
