@@ -20,7 +20,7 @@ The logz.io endpoint URL is `${_YOUR_ENDPOINT_URL_}?token=${_YOUR_TOKEN_}&type=$
 ### Build and deploy
 * `docker build -t ${_YOUR_DOCKER_IMAGE_TAG_} .`
 * `docker push ${_YOUR_DOCKER_IMAGE_TAG_}`
-* `kubectl create -f daemonset.json`
+* `kubectl create -f daemonset.json --validate=false` (disable validation over `readOnly` key in one of the volumes)
 
 # Origin
 
