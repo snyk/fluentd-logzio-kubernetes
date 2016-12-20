@@ -1,0 +1,83 @@
+{
+  "apiVersion": "extensions/v1beta1",
+  "kind": "DaemonSet",
+  "metadata": {
+    "name": "fluentd-logzio",
+    "labels": {
+      "tier": "monitoring",
+      "app": "fluentd-logzio",
+      "version": "v1"
+    }
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "labels": {
+          "name": "fluentd-logzio"
+        }
+      },
+      "spec": {
+        "hostPID": true,
+        "hostIPC": true,
+        "hostNetwork": true,
+        "containers": [
+          {
+            "resources": {
+              "requests": {
+                "cpu": 0.15
+              }
+            },
+            "securityContext": {
+              "privileged": true
+            },
+            "env": [
+              {
+                "name": "LOG_PATH",
+                "value": "/var/log/containers/*.log"
+              },
+              {
+                "name": "LOGZIO_URL",
+                "value": "_YOUR_ENDPOINT_URL_"
+              },
+              {
+                "name": "LOGZIO_TOKEN",
+                "value": "_YOUR_TOKEN_"
+              },
+              {
+                "name": "LOGZIO_TYPE",
+                "value": "_YOUR_LOG_TYPE_"
+              }
+            ],
+            "image": "_YOUR_DOCKER_IMAGE_TAG_",
+            "name": "fluentd-logzio",
+            "volumeMounts": [
+              {
+                "name": "varlog",
+                "mountPath": "/var/log"
+              },
+              {
+                "name": "varlibdockercontainers",
+                "mountPath": "/var/lib/docker/containers"
+              }
+            ]
+          }
+        ],
+        "volumes": [
+          {
+            "name": "varlog",
+            "hostPath": {
+              "path": "/var/log"
+            }
+          },
+          {
+            "name": "varlibdockercontainers",
+            "hostPath": {
+              "path": "/var/lib/docker/containers",
+              "readOnly": true
+            }
+          }
+        ]
+      }
+    }
+  }
+}
