@@ -22,6 +22,9 @@ The logz.io endpoint URL is `${_YOUR_ENDPOINT_URL_}?token=${_YOUR_TOKEN_}&type=$
 * `docker push ${_YOUR_DOCKER_IMAGE_TAG_}`
 * `kubectl create -f daemonset.json --validate=false` (disable validation over `readOnly` key in one of the volumes)
 
+### Caveats
+* Because of an [issue with mounting symlinked directories](https://github.com/kubernetes/kubernetes/issues/13313), you may need to change the mount points in the daemonset.json include your kubelet's _actual_ docker root.
+
 # Origin
 
 This repo is based on https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elasticsearch/fluentd-es-image
