@@ -14,6 +14,7 @@ Sign in to your logz.io account. Fluentd connection details will be available at
 * Replace `_YOUR_ENDPOINT_URL_` with your logz.io access endpoint, such as https://listener.logz.io:8071.
 * Replace `_YOUR_TOKEN_` with your logz.io account token.
 * Replace `_YOUR_LOG_TYPE_` with the type of logs you are shipping. We are using this as a tag to identify the k8s cluster source of the logs.
+* Replace `_LOG_LEVEL_` with the requested fluentd log level. See the [logging documentation](https://docs.fluentd.org/v0.12/articles/logging#by-config-file) for more details. Also uncomment this [line](https://github.com/snyk/fluentd-logzio-kubernetes/blob/master/td-agent.conf#L47).
 
 The logz.io endpoint URL is `${_YOUR_ENDPOINT_URL_}?token=${_YOUR_TOKEN_}&type=${_YOUR_LOG_TYPE_}`
 
