@@ -37,14 +37,14 @@ MAINTAINER Jimmi Dyson "jimmidyson@gmail.com"
 #USER docker
 
 RUN CURRENT_USER=`id`
-RUN echo current user is 
-RUN echo id
-RUN echo $CURRENT_USER
+ echo current user is `whoami`
+ echo `id`
+ echo $CURRENT_USER
 
 RUN echo going to run 'apt-get update' 
 RUN apt-get update
 
-RUN echo going to run 'apt-get install' 
+echo going to run 'apt-get install' 
 RUN apt-get install -y -q --no-install-recommends \
   curl ca-certificates make g++ sudo bash
 
