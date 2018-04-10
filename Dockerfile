@@ -27,14 +27,14 @@ MAINTAINER Alex Robinson "arob@google.com"
 MAINTAINER Jimmi Dyson "jimmidyson@gmail.com"
 
 #make docker user and set him as sudo
-RUN apt-get update
-RUN apt-get install sudo
+#RUN apt-get update
+#RUN apt-get install sudo
 
-RUN adduser --disabled-password --gecos '' docker
-RUN adduser docker sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+#RUN adduser --disabled-password --gecos '' docker
+#RUN adduser docker sudo
+#RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-USER docker
+#USER docker
 
 # Ensure there are enough file descriptors for running Fluentd.
 RUN ulimit -n 65536
