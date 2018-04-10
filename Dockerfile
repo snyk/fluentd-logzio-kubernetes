@@ -36,10 +36,10 @@ MAINTAINER Jimmi Dyson "jimmidyson@gmail.com"
 
 #USER docker
 
+echo current user is `whoami`
+echo `id`
 RUN CURRENT_USER=`id`
- echo current user is `whoami`
- echo `id`
- echo $CURRENT_USER
+echo $CURRENT_USER
 
 RUN echo going to run 'apt-get update' 
 RUN apt-get update
