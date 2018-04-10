@@ -47,7 +47,7 @@ RUN adduser --disabled-password --gecos '' docker
 RUN adduser docker sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-USER docker
+RUN sudo -i
 
 # Ensure there are enough file descriptors for running Fluentd.
 RUN ulimit -n 65536
