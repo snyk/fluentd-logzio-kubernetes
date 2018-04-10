@@ -36,6 +36,13 @@ MAINTAINER Jimmi Dyson "jimmidyson@gmail.com"
 
 #USER docker
 
+RUN echo going to run 'apt-get update' 
+RUN apt-get update
+
+RUN echo going to run 'apt-get install' 
+RUN apt-get install -y -q --no-install-recommends \
+  curl ca-certificates make g++ sudo bash
+
 # Ensure there are enough file descriptors for running Fluentd.
 RUN ulimit -n 65536
 
