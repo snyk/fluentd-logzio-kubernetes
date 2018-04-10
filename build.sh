@@ -16,9 +16,9 @@
 
 
 # Install prerequisites.
-apt-get update
+sudo apt-get update
 
-apt-get install -y -q --no-install-recommends \
+sudo apt-get install -y -q --no-install-recommends \
   curl ca-certificates make g++ sudo bash
 
 # Install Fluentd.
