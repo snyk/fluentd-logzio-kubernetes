@@ -16,11 +16,14 @@
 
 
 # Install prerequisites.
+echo going to run 'apt-get update' 
 apt-get update
 
+echo going to run 'apt-get install' 
 apt-get install -y -q --no-install-recommends \
   curl ca-certificates make g++ sudo bash
 
+echo going to run 'Install Fluentd' 
 # Install Fluentd.
 /usr/bin/curl -sSL https://toolbelt.treasuredata.com/sh/install-ubuntu-xenial-td-agent2.sh | sh
 
